@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+  mongodb:
+    container_name: mongodb
+    restart: always
+    volumes:
+      - ${WEBAPP_STORAGE_HOME}/site:/data/db
+    ports:
+      - "27017:27017"
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  esourcing.products:
+    container_name: esourcingproduct
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      #- ASPNETCORE_URLS=http://+:80
+      - "ProductDatabaseSettings:ConnectionStrings=mongodb://mongodb:27017"
+    depends_on:
+      - mongodb
+    volumes:
+      - ${HOME}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${HOME}/ASP.NET/Https:/root/.aspnet/https:ro
+    ports:
+      - "8080:80"
+  esourcing.sourcing:
+    container_name: esourcingsourcing
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "SourcingDatabaseSettings:ConnectionStrings=mongodb://mongodb:27017"
+      - "EventBus:HostName=rabbitmq"
+    depends_on:
+      - mongodb
+      - rabbitmq
+    volumes:
+      - ${HOME}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${HOME}/ASP.NET/Https:/root/.aspnet/https:ro
+    ports:
+      - "8081:80"
+
