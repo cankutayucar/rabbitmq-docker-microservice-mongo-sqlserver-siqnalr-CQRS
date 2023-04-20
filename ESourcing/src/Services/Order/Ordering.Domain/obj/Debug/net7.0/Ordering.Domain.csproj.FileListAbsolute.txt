@@ -1,0 +1,12 @@
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\bin\Debug\net7.0\Ordering.Domain.deps.json
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\bin\Debug\net7.0\Ordering.Domain.dll
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\bin\Debug\net7.0\Ordering.Domain.pdb
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\obj\Debug\net7.0\Ordering.Domain.csproj.AssemblyReference.cache
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\obj\Debug\net7.0\Ordering.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\obj\Debug\net7.0\Ordering.Domain.AssemblyInfoInputs.cache
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\obj\Debug\net7.0\Ordering.Domain.AssemblyInfo.cs
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\obj\Debug\net7.0\Ordering.Domain.csproj.CoreCompileInputs.cache
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\obj\Debug\net7.0\Ordering.Domain.dll
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\obj\Debug\net7.0\refint\Ordering.Domain.dll
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\obj\Debug\net7.0\Ordering.Domain.pdb
+C:\Users\canku\OneDrive\Masaüstü\microservice2\ESourcing\src\Services\Order\Ordering.Domain\obj\Debug\net7.0\ref\Ordering.Domain.dll

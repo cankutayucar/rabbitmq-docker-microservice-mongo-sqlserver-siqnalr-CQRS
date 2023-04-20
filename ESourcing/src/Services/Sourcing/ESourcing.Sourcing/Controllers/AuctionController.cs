@@ -90,9 +90,6 @@ namespace ESourcing.Sourcing.Controllers
             }
             return Accepted();
         }
-
-
-
         [HttpPost("TestEvent")]
         public async Task<ActionResult> TestEvent()
         {
@@ -117,8 +114,5 @@ namespace ESourcing.Sourcing.Controllers
             }
             return Accepted();
         }
-
-
-
     }
 }

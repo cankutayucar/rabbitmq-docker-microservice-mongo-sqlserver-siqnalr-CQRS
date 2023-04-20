@@ -1,6 +1,14 @@
 version: '3.4'
 
 services:
+  mssqldb:
+    container_name: mssqldb
+    restart: always
+    environment:
+      MSSQL_SA_PASSWORD: "Can123456789"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433" 
   mongodb:
     container_name: mongodb
     restart: always
@@ -18,7 +26,7 @@ services:
     container_name: esourcingproduct
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      #- ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_URLS=http://+:80
       - "ProductDatabaseSettings:ConnectionStrings=mongodb://mongodb:27017"
     depends_on:
       - mongodb
@@ -31,6 +39,7 @@ services:
     container_name: esourcingsourcing
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
       - "SourcingDatabaseSettings:ConnectionStrings=mongodb://mongodb:27017"
       - "EventBus:HostName=rabbitmq"
     depends_on:
@@ -41,4 +50,19 @@ services:
       - ${HOME}/ASP.NET/Https:/root/.aspnet/https:ro
     ports:
       - "8081:80"
+  esourcing.order:
+    container_name: esourcingorder
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - "EventBus:HostName=rabbitmq"
+      - "ConnectionStrings:OrderConnection=Server=mssqldb;Database=OrderDb;User Id=sa;Password=Can123456789"
+    depends_on:
+      - rabbitmq
+      - mssqldb
+    volumes:
+      - ${HOME}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${HOME}/ASP.NET/Https:/root/.aspnet/https:ro
+    ports:
+      - "8082:80"
 

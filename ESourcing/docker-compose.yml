@@ -1,6 +1,8 @@
 version: '3.4'
 
 services:
+  mssqldb:
+    image: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04
   mongodb:
     image: mongo
   rabbitmq: 
@@ -15,4 +17,10 @@ services:
     build:
       context: .
       dockerfile: src/Services/Sourcing/ESourcing.Sourcing/Dockerfile
+
+  esourcing.order:
+    image: ${DOCKER_REGISTRY-}esourcingorder
+    build:
+      context: .
+      dockerfile: src/Services/Order/ESourcing.Order/Dockerfile
 
